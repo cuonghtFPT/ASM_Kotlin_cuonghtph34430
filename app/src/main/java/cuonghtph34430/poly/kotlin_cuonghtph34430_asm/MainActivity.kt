@@ -17,7 +17,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-                AppNavigation()
+                Kotlin_cuonghtph34430_ASMTheme {
+                    AppNavigation()
+                }
 
         }
     }
@@ -29,7 +31,7 @@ fun AppNavigation() {
     NavHost(navController = navController, startDestination = "boarding") {
         composable("boarding") { Welcom() }
         composable("login") { Login() }
-        composable("signup") { Register() }
+        composable("register") { Register() }
         composable("home") { Home() }
     }
 }

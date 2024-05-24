@@ -1,5 +1,6 @@
 package cuonghtph34430.poly.kotlin_cuonghtph34430_asm
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -54,6 +55,7 @@ class Register: ComponentActivity() {
 
     @Composable
     fun GetLayoutSignUp(navController: NavController) {
+        val context = LocalContext.current
         var isShowPass by remember {
             mutableStateOf(false)
         }
@@ -271,7 +273,10 @@ class Register: ComponentActivity() {
                             horizontalAlignment = Alignment.CenterHorizontally,
                         ) {
                             Button(
-                                onClick = { /*TODO*/ },
+                                onClick = { /*TODO*/
+                                    val intent = Intent(context, Home::class.java)
+                                    context.startActivities(arrayOf(intent))},
+
                                 modifier = Modifier.size(290.dp, 50.dp),
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = Color(0xff242424)

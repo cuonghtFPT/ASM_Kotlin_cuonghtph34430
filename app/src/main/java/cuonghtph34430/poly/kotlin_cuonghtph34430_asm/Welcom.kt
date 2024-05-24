@@ -1,5 +1,6 @@
 package cuonghtph34430.poly.kotlin_cuonghtph34430_asm
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -38,6 +39,7 @@ class Welcom : ComponentActivity() {
 
     @Composable
     fun GetLayoutBoarding(navController: NavController) {
+        val context = LocalContext.current
 
         Box(
             modifier = Modifier
@@ -100,7 +102,8 @@ class Welcom : ComponentActivity() {
                 ) {
                     Button(
                         onClick = {
-                            navController.navigate("login")
+                            val intent = Intent(context, Login::class.java)
+                            context.startActivities(arrayOf(intent))
                         },
                         modifier = Modifier.size(160.dp, 50.dp),
                         colors = ButtonDefaults.buttonColors(

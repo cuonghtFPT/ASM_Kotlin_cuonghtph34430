@@ -1,5 +1,6 @@
 package cuonghtph34430.poly.kotlin_cuonghtph34430_asm
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -37,6 +38,7 @@ class Login : ComponentActivity() {
 
     @Composable
     fun GetLayoutLogin(navController: NavController) {
+        val context = LocalContext.current
         var isShowPass by remember {
             mutableStateOf(false)
         }
@@ -185,7 +187,8 @@ class Login : ComponentActivity() {
                             )
                             Button(
                                 onClick = {
-                                    navController.navigate("home")
+                                    val intent = Intent(context, Register::class.java)
+                                    context.startActivity(intent)
                                 },
                                 modifier = Modifier.size(290.dp, 50.dp),
                                 colors = ButtonDefaults.buttonColors(

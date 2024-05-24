@@ -1,5 +1,6 @@
 package cuonghtph34430.poly.kotlin_cuonghtph34430_asm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -35,6 +36,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -43,7 +45,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-class Home : AppCompatActivity() {
+class Home: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -86,6 +88,7 @@ class Home : AppCompatActivity() {
 
     @Composable
     fun GetLayoutHome() {
+
         val scrollSate = rememberScrollState()
         var statusType by remember {
             mutableStateOf("Popular")
@@ -225,6 +228,8 @@ class Home : AppCompatActivity() {
 
     @Composable
     fun ItemProduct(model: Product) {
+        val context = LocalContext.current
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -243,7 +248,9 @@ class Home : AppCompatActivity() {
                     contentScale = ContentScale.FillWidth,
                 )
                 IconButton(
-                    onClick = { /*TODO*/ },
+                    onClick = {
+                        val intent = Intent(context, Cart::class.java)
+                        context.startActivities(arrayOf(intent))},
                     modifier = Modifier
                         .padding(10.dp)
                         .background(

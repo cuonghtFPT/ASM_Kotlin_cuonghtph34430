@@ -13,24 +13,25 @@
         android:theme="@style/Theme.Kotlin_cuonghtph34430_ASM"
         tools:targetApi="31">
         <activity
-            android:name=".Welcoms"
-            android:exported="false"
-            android:label="@string/title_activity_welcoms"
-            android:theme="@style/Theme.Kotlin_cuonghtph34430_ASM" />
+            android:name=".Checkout"
+            android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".Product"
             android:exported="false" />
         <activity
             android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".Cart"
             android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Congrats"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
             android:exported="false" />
         <activity
             android:name=".Welcom"
